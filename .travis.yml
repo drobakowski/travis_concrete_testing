@@ -1,12 +1,11 @@
 language: erlang
+install: true
 
 otp_release:
     - 17.3
-    - 17.2
     - 17.1
     - 17.0
     - R16B03
     - R15B03
 
-script:
-    - make
+script: make get-rebar all
