@@ -1,0 +1,15 @@
+%% -*- mode: erlang -*-
+{application, travis_concrete_testing,
+ [
+  {description, "the travis_concrete_testing project"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  %% uncomment if this is an active application
+  %% {mod, { travis_concrete_testing_app, []}},
+  {env, []}
+ ]}.
+%% vim: set filetype=erlang tabstop=2

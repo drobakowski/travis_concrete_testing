@@ -1,0 +1,7 @@
+ebin/*
+*.beam
+deps/*
+rel/travis_concrete_testing
+.concrete/DEV_MODE
+deps.plt
+.eunit
