@@ -188,9 +188,7 @@ else
 endif
 
 deploy_base_plt:
-	@rm -rf plts && mkdir plts
-	-$(DIALYZER) --build_plt --apps $(ERLANG_DIALYZER_APPS) --output_plt plts/$(BASE_PLT)
-	@ls -la plts
+	-$(DIALYZER) --build_plt --apps $(ERLANG_DIALYZER_APPS) --output_plt $(BASE_PLT)
 
 doc:
 	@$(REBARC) doc skip_deps=true
