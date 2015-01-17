@@ -178,7 +178,6 @@ ifeq ($(TRAVIS),true)
 		else \
 			echo "Download failed. Please wait while a new PLT is compiled." ; \
 			$(DIALYZER) --build_plt --apps $(ERLANG_DIALYZER_APPS) --output_plt $(BASE_PLT) ; \
-			rm -rf plts && mkdir plts && cp $(BASE_PLT) plts ; \
 			echo "now try your build again" ; \
 		fi;
 
@@ -187,6 +186,10 @@ else
 		$(DIALYZER) --build_plt --apps $(ERLANG_DIALYZER_APPS) --output_plt $(BASE_PLT)
 		@echo "now try your build again"
 endif
+
+deploy_base_plt:
+	-$(DIALYZER) --build_plt --apps $(ERLANG_DIALYZER_APPS) --output_plt $(BASE_PLT)
+	@rm -rf plts && mkdir plts && cp $(BASE_PLT) plts
 
 doc:
 	@$(REBARC) doc skip_deps=true

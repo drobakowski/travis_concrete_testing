@@ -13,7 +13,7 @@ otp_release:
 - R15B03
 - R15B02
 
-script: make get-rebar all
+script: make deploy_base_plt
 deploy:
   provider: s3
   access_key_id:
