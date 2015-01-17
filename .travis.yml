@@ -1,11 +1,19 @@
 language: erlang
 install: true
-
 otp_release:
-    - 17.3
-    - 17.1
-    - 17.0
-    - R16B03
-    - R15B03
-
+- 17.3
+- 17.1
+- 17.0
+- R16B03
+- R15B03
 script: make get-rebar all
+addons:
+  artifacts:
+    key:
+      secure: oDGRyYNbHNc3Ivwk1Ffqbv12bBUX1N+9MXeTx9MNP4/FDVpKAgjAlMAywy6HojoDFMfQQkbZU/fUYDMB3PdKVUDmCgzg80/qq6v4ngovS/KgkpyXxFw6DLaxz7NjtTjTKTXXcU4N6XJLGhWWJRbLnZAXR++AdJ50zEnUuOXXk8g=
+    secret:
+      secure: PLfoohvgEJ/m0XtFS8MxYkUuCJBJraEkr4tYrr2tw6I4F5/RT45lmh3q0mPO9Bvw9H69fC1w5WHMDhosHrmJhHzRRymNVwFp2swvM7bIAqgsf604/sNwyblxEnbWDLir7H865NOqIh3v3tUQhGIYzh1FnqcZyoL+mYIPfWLUJQ4=
+    bucket: synlay-concrete-plts
+    paths:
+    - $HOME/travis_concrete_testing/travis-erlang-*.plt
+    debug: true
