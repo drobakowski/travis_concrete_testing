@@ -1,11 +1,20 @@
 language: erlang
 install: true
-
 otp_release:
-    - 17.3
-    - 17.1
-    - 17.0
-    - R16B03
-    - R15B03
+- 17.3
 
 script: make get-rebar all
+deploy:
+  provider: s3
+  access_key_id:
+    secure: sEos7hhMc68lhmh7nstBrKAS57NvuD1f3c/ECu9ON4a4dJ89FaO2NloRp0RM6TelbDp1dgS2oXW5ItBozPYwaViL3hewneCcrIUdd69cWHxaI8rFjJO5EOLhX56C8C49CT9JbIiu6jg8GgemUE6ise8FKt84jFnQC8zET7eb4yE=
+  secret_access_key:
+    secure: S90RY8jTDmZUIZ06utlrjAKAORu5RwCpp9BjwvjhUsqCM2hRfeZ96RYR0JaiwherYxSI8e0/tX11F/kQ3SfS0MChdJTxGFFpcX7IA/wYrIDfu66gg0dbDHzhDQRB2hQgjXBioLoio/O8OIUwQO4LxqmdaWlnj4ebv0J3iAUkFxo=
+  bucket: synlay-concrete-plts
+  skip_cleanup: true
+  region: eu-central-1
+  endpoint: s3-eu-central-1.amazonaws.com
+  acl: public_read
+  on:
+    repo: drobakowski/travis_concrete_testing
+    branch: feature/dialyzer_plts_s3_deploy
