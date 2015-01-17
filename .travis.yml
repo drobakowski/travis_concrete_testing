@@ -15,5 +15,5 @@ addons:
       secure: PLfoohvgEJ/m0XtFS8MxYkUuCJBJraEkr4tYrr2tw6I4F5/RT45lmh3q0mPO9Bvw9H69fC1w5WHMDhosHrmJhHzRRymNVwFp2swvM7bIAqgsf604/sNwyblxEnbWDLir7H865NOqIh3v3tUQhGIYzh1FnqcZyoL+mYIPfWLUJQ4=
     bucket: synlay-concrete-plts
     paths:
-    - $(find travis-erlang-*.plt)
+    - $(ls travis-erlang-*.plt | tr "\n" ":")
     debug: true
