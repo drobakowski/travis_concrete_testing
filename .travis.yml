@@ -1,7 +1,17 @@
 language: erlang
 install: true
 otp_release:
+- 17.4
 - 17.3
+- 17.1
+- 17.0
+- R16B03-1
+- R16B03
+- R16B02
+- R16B01
+- R16B
+- R15B03
+- R15B02
 
 script: make get-rebar all
 deploy:
@@ -12,6 +22,7 @@ deploy:
     secure: S90RY8jTDmZUIZ06utlrjAKAORu5RwCpp9BjwvjhUsqCM2hRfeZ96RYR0JaiwherYxSI8e0/tX11F/kQ3SfS0MChdJTxGFFpcX7IA/wYrIDfu66gg0dbDHzhDQRB2hQgjXBioLoio/O8OIUwQO4LxqmdaWlnj4ebv0J3iAUkFxo=
   bucket: synlay-concrete-plts
   skip_cleanup: true
+  local_dir: plts
   region: eu-central-1
   endpoint: s3-eu-central-1.amazonaws.com
   acl: public_read
